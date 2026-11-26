@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import androidx.fragment.app.FragmentActivity
+import servando.contreras.jimenez.biometricauth_contrerasjimenezservando.navigation.BiometricNavigation
 import servando.contreras.jimenez.biometricauth_contrerasjimenezservando.ui.theme.BiometricAuth_ContrerasJimenezServandoTheme
 import servando.contreras.jimenez.biometricauth_contrerasjimenezservando.view.screens.LoginScreen
 class MainActivity : FragmentActivity() {
@@ -17,13 +18,7 @@ class MainActivity : FragmentActivity() {
         setContent {
             BiometricAuth_ContrerasJimenezServandoTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-
-                    LoginScreen(
-                        innerPadding = innerPadding,
-                        onSuccessfullLogin = {
-                            Toast.makeText(this, "¡Bienvenido de vuelta!", Toast.LENGTH_SHORT).show()
-                        }
-                    )
+                   BiometricNavigation(innerPadding)
 
                 }
             }
